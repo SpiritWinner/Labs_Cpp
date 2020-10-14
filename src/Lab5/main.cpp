@@ -18,7 +18,7 @@ public:
         vec = new int[size];
         for (int i = 0; i < size; i++)
         {
-            cout << "Enter " << i+1 << "number" << endl;
+            cout << "Enter " << i+1 << " number";
             cin >> vec[i];
         }
     }
@@ -39,8 +39,6 @@ private:
     int rows;
     int columns;
 public:
-    Matrix();
-
     Matrix(int rows, int columns)
     {
         this->rows = rows;
@@ -54,10 +52,14 @@ public:
         {
             arr[i]  = new int[columns];
         }
+
+        char space = 32;
+
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
             {
+                cout << "Enter A[" << i << ' ' << j << "]:";
                 cin >> arr[i][j];
             }
         }
@@ -89,7 +91,7 @@ void  Multiply(Vector &vec, Matrix &mat)
         out[i] = temp;
     }
 
-
+    cout << "Result: " << endl;
     for (int number = 0; number < vec.size; number++)
             cout << out[number] << " ";
 }
@@ -100,8 +102,6 @@ int main()
     Matrix matrix(3, 3);
     vector.inout();
     matrix.inout();
-    //vector.print();
-    //matrix.print();
     Multiply(vector, matrix);
     return 0;
 }
