@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 class Youth
@@ -9,7 +10,7 @@ protected:
 
 public:
     Youth(string fullName, string yearBorn)
-        : fullName(fullName), yearBorn(yearBorn)
+            : fullName(fullName), yearBorn(yearBorn)
     {
     }
 
@@ -19,8 +20,11 @@ public:
         cout << "Year Born: " << yearBorn << endl;
     }
 
-    string getFullName() { return fullName; }
-    string getYearBorn() { return yearBorn; }
+    string getFullName()
+    { return fullName; }
+
+    string getYearBorn()
+    { return yearBorn; }
 };
 
 class Learner
@@ -32,7 +36,7 @@ protected:
 
 public:
     Learner(int number, int course, float avgMark)
-        : numberZ(number), course(course), avgMark(avgMark)
+            : numberZ(number), course(course), avgMark(avgMark)
     {
     }
 
@@ -44,18 +48,24 @@ public:
     }
 
 
-    int getNumberZ() { return numberZ; }
-    int getCourse() { return course; }
-    float getAvgMark() { return avgMark; }
+    int getNumberZ()
+    { return numberZ; }
+
+    int getCourse()
+    { return course; }
+
+    float getAvgMark()
+    { return avgMark; }
 };
 
-class Student: public Youth, public Learner
+class Student : public Youth, public Learner
 {
 public:
     Student(string fullName, string yearBorn, int number, int course, float avgMark)
-        : Youth(fullName, yearBorn), Learner(number, course, avgMark)
+            : Youth(fullName, yearBorn), Learner(number, course, avgMark)
     {
     }
+
     void print();
 };
 
@@ -67,8 +77,8 @@ void Student::print()
 
 int main()
 {
-   auto* std = new Student("Sadriev.A.H.", "17.12.2001", 23451, 2, 74.3);
-   std->print();
-   delete std;
-   return 0;
+    auto *std = new Student("Sadriev.A.H.", "04.04.2001", 23451, 2, 74.3);
+    std->print();
+    delete std;
+    return 0;
 }
