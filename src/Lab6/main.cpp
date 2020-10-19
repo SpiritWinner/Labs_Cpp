@@ -50,6 +50,6 @@ int main()
     myInt.print();
     MyInt myInt1 = myInt + 7;
     myInt.print();
-    cout << (myInt == myInt1) << endl;
+    cout << (myInt == myInt2) << endl;
     return 0;
 }
