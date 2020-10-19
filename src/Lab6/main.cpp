@@ -1,10 +1,9 @@
 #include "iostream"
-
 using namespace std;
 
 class MyInt
 {
-public:
+private:
     int value;
 public:
     MyInt(int val)
@@ -22,7 +21,13 @@ public:
         return (value % 2 == 0);
     }
 
-    friend int operator -- (MyInt &myInt);
+    MyInt& operator + (int num)
+    {
+        this->value += num;
+        return *this;
+    }
+
+    friend MyInt& operator -- (MyInt &myInt);
     friend bool operator == (MyInt &myInt1, MyInt &myInt2);
 };
 
@@ -31,24 +36,20 @@ bool operator == (MyInt &myInt1, MyInt &myInt2)
     return myInt1.value == myInt2.value;
 }
 
-MyInt operator + (MyInt &myInt, int num)
+MyInt& operator -- (MyInt &myInt)
 {
-    return MyInt(myInt.value + num);
-}
-
-int operator -- (MyInt &myInt)
-{
-    return (myInt.value - 3);
+    myInt.value -= 3;
+    return myInt;
 }
 
 int main()
 {
     MyInt myInt(22);
     cout << !myInt << endl;
-    cout << --myInt << endl;
+    MyInt myInt2 = --myInt;
+    myInt.print();
     MyInt myInt1 = myInt + 7;
-    myInt1.print();
+    myInt.print();
     cout << (myInt == myInt1) << endl;
-
     return 0;
 }
