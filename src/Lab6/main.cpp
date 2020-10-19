@@ -16,7 +16,7 @@ public:
         cout << value << endl;
     }
 
-    bool operator! ()
+    bool operator ! ()
     {
         return (value % 2 == 0);
     }
