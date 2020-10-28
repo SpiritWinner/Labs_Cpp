@@ -8,6 +8,7 @@ using namespace std;
 int main()
 {
     double number, rate;
+
     cout << "Enter number:";
     cin >> number;
     if (!cin)
@@ -27,15 +28,16 @@ int main()
     cin.ignore(100, '\n');
     double res = pow(number, rate);
 
-    ofstream outf("../src/Lab8/Res.txt");
+    ofstream fOut;
+    fOut.open("../src/Lab8/FirstTask/Res.txt");
 
-    if (!outf)
+    if (!fOut)
     {
-        cout << "Could not ve opened fail" << endl;
+        cout << "Could not be opened fail" << endl;
         exit(1);
     }
-    outf.fill('@');
-    outf << setw(15) << fixed << setprecision(3) << res << endl;
-    outf.close();
+    fOut.fill('@');
+    fOut << setw(15) << fixed << setprecision(3) << res << endl;
+    fOut.close();
     return 0;
 }
