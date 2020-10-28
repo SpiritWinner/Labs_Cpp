@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <fstream>
-#include <iomanip>
 
 using namespace std;
 
@@ -27,4 +25,3 @@ int main()
         cerr << "Your x = " << ex << ", x must be > 0";
     }
 }
-
