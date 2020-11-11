@@ -48,7 +48,7 @@ int main()
     cout << !myInt << endl;
     MyInt myInt2 = --myInt;
     myInt.print();
-    MyInt myInt1 = myInt + 7;
+    myInt + 7;
     myInt.print();
     cout << (myInt == myInt2) << endl;
     return 0;
